@@ -36,10 +36,11 @@ https.get("https://pomber.github.io/covid19/timeseries.json", (res) => {
             let newDeaths = jsonToday.deaths - jsonYesterday.deaths;
             let newRecoveries = jsonToday.recovered - jsonYesterday.recovered;
         
-            Bot.tweet("Right now, there are " + newCases + " new cases in Canada. That's a " + Math.round(newCases / todayCases * 100) + "% increase since yesterday. #covid19");
+            Bot.tweet("Today, there are " + todayCases + " COVID-19 cases in Canada. #covid19");
+            Bot.tweet("Since yesterday, there have been " + newCases + " new cases in Canada. That's a " + Math.round(newCases / todayCases * 100) + "% increase since yesterday. #covid19");
             Bot.tweet(newRecoveries + " people have recovered from COVID-19 in Canada today! " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " #covid19");
             Bot.tweet(newDeaths + " people have died from COVID-19 in Canada today. #covid19");
-            Bot.tweet("So far, " + todayRecoveries + " have recovered from COVID-19. Big thanks to our healthcare professionals! #covid19");
+            Bot.tweet("Since yesterday, " + todayRecoveries + " have recovered from COVID-19. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " #covid19");
         
         } catch (error) {
             console.error(error.message);
