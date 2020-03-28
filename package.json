@@ -1,0 +1,15 @@
+{
+  "name": "covidtwitterbot",
+  "version": "1.0.0",
+  "description": "A bot for updating Canadians on COVID-19 numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danilo Lekovic",
+  "license": "ISC",
+  "dependencies": {
+    "node-twitterbot": "^0.2.2",
+    "twit": "^2.2.11"
+  }
+}
