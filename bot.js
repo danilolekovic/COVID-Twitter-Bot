@@ -11,8 +11,7 @@ let Bot = new TwitterBot({
 
 let thankingPhrases = [
     "Thank you to the healthcare workers!",
-    "Good work!",
-    "Thank you!",
+    "Good work healthcare workers!",
     "We appreciate you, healthcare workers!"
 ];
 
