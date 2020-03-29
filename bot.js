@@ -28,11 +28,9 @@ https.get("https://corona.lmao.ninja/countries/Canada", (res) => {
         try {
             let data = JSON.parse(body);
 
-            Bot.tweet("There are currently " + data.cases + " COVID-19 cases in Canada. #COVID19");
-            Bot.tweet("In total, " + data.deaths + " people have died from COVID-19 in Canada. #COVID19");
-            Bot.tweet("As of now, there have been " + data.recovered + " recoveries in Canada. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
-            Bot.tweet("Today, there have been " + data.todayDeaths + " COVID-19 deaths in Canada. #COVID19");
-            Bot.tweet("Today, there have been " + data.todayCases + " new confirmed cases in Canada. #COVID19");
+            Bot.tweet("Currently, there are a total of " + data.cases + " confirmed cases and " + data.deaths + " deaths in Canada. #COVID19");
+            Bot.tweet("At the moment, there have been " + data.recovered + " recoveries in Canada. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
+            Bot.tweet("Today, there have been " + data.todayCases + " new confirmed cases and " + data.todayDeaths + " deaths in Canada. #COVID19");
         
         } catch (error) {
             console.error(error.message);
