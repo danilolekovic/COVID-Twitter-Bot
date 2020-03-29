@@ -12,10 +12,12 @@ let Bot = new TwitterBot({
 let thankingPhrases = [
     "Thank you to the healthcare workers!",
     "Good work healthcare workers!",
-    "We appreciate you, healthcare workers!"
+    "We appreciate you, healthcare workers!",
+    "To our frontline healthcare workers, thank you!",
+    "This wouldn't be possible without our healthcare workers!"
 ];
 
-https.get("https://pomber.github.io/covid19/timeseries.json", (res) => {
+https.get("https://corona.lmao.ninja/countries/Canada", (res) => {
     let body = "";
 
     res.on("data", (chunk) => {
@@ -26,20 +28,11 @@ https.get("https://pomber.github.io/covid19/timeseries.json", (res) => {
         try {
             let data = JSON.parse(body);
 
-            jsonToday = data.Canada[data.Canada.length - 1];
-            let todayCases = jsonToday.confirmed;
-            let todayRecoveries = jsonToday.recovered;
-        
-            jsonYesterday = data.Canada[data.Canada.length - 2];
-            let newCases = jsonToday.confirmed - jsonYesterday.confirmed;
-            let newDeaths = jsonToday.deaths - jsonYesterday.deaths;
-            let newRecoveries = jsonToday.recovered - jsonYesterday.recovered;
-        
-            Bot.tweet("There are currently " + todayCases + " COVID-19 cases in Canada. #covid19");
-            Bot.tweet("Since yesterday, there have been " + newCases + " new cases in Canada. That's a " + Math.round(newCases / todayCases * 100) + "% increase since yesterday. #covid19");
-            Bot.tweet(newRecoveries + " people have recovered from COVID-19 in Canada today! " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " #covid19");
-            Bot.tweet(newDeaths + " people have died from COVID-19 in Canada today. #covid19");
-            Bot.tweet("In total, " + todayRecoveries + " people have recovered from COVID-19. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " #covid19");
+            Bot.tweet("There are currently " + data.cases + " COVID-19 cases in Canada. #COVID19");
+            Bot.tweet(data.deaths + " Canadians have died from COVID-19. #COVID19");
+            Bot.tweet("As of now, there have been " + data.recovered + " recoveries so far. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
+            Bot.tweet("Today, there have been " + data.todayDeaths + " COVID-19 deaths in Canada. #COVID19");
+            Bot.tweet("Today, there are " + data.todayCases + " new confirmed cases. #COVID19");
         
         } catch (error) {
             console.error(error.message);
