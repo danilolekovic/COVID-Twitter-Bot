@@ -17,7 +17,7 @@ let thankingPhrases = [
     "We appreciate you, healthcare workers!"
 ];
 
-https.get("https://corona.lmao.ninja/countries/Canada", (res) => {
+https.get("https://corona.lmao.ninja/v2/countries/Canada", (res) => {
     let body = "";
 
     res.on("data", (chunk) => {
@@ -28,9 +28,10 @@ https.get("https://corona.lmao.ninja/countries/Canada", (res) => {
         try {
             let data = JSON.parse(body);
 
-            Bot.tweet("Currently, there are a total of " + data.cases + " confirmed cases and " + data.deaths + " deaths in Canada. #COVID19");
-            Bot.tweet("At the moment, there have been " + data.recovered + " recoveries in Canada. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
-            Bot.tweet("Today, there have been " + data.todayCases + " new confirmed cases and " + data.todayDeaths + " deaths in Canada. #COVID19");
+            Bot.tweet("Currently, there are a total of " + data.cases + " confirmed cases and " + data.deaths + " deaths in #Canada. #COVID19");
+            Bot.tweet("At the moment, there have been " + data.recovered + " recoveries in #Canada. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
+            Bot.tweet("Today, there have been " + data.todayCases + " new confirmed cases and " + data.todayDeaths + " deaths in #Canada. #COVID19");
+            Bot.tweet("At the moment, there have been " + data.tests + " tests for #COVID19 in #Canada");
         
         } catch (error) {
             console.error(error.message);
