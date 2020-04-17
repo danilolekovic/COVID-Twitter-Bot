@@ -28,10 +28,10 @@ https.get("https://corona.lmao.ninja/v2/countries/Canada", (res) => {
         try {
             let data = JSON.parse(body);
 
-            Bot.tweet("Currently, there are a total of " + data.cases + " confirmed cases and " + data.deaths + " deaths in #Canada. #COVID19");
-            Bot.tweet("At the moment, there have been " + data.recovered + " recoveries in #Canada. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
-            Bot.tweet("Today, there have been " + data.todayCases + " new confirmed cases and " + data.todayDeaths + " deaths in #Canada. #COVID19");
-            Bot.tweet("At the moment, there have been " + data.tests + " tests for #COVID19 in #Canada");
+            Bot.tweet("Currently, there are a total of " + data.cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " confirmed cases and " + data.deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " deaths in #Canada. #COVID19");
+            Bot.tweet("At the moment, there have been " + data.recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " recoveries in #Canada. " + thankingPhrases[Math.floor(Math.random() * thankingPhrases.length)] + " 🙏 #COVID19");
+            Bot.tweet("Today, there have been " + data.todayCases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " new confirmed cases and " + data.todayDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " deaths in #Canada. #COVID19");
+            Bot.tweet("At the moment, there have been " + data.tests.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " tests for #COVID19 in #Canada");
         
         } catch (error) {
             console.error(error.message);
