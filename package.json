@@ -11,6 +11,8 @@
   "dependencies": {
     "node-twitterbot": "^0.2.2",
     "twit": "^2.2.11",
-    "node-chartjs": "^0.0.7"
+    "node-chartjs": "^0.0.7",
+    "chart.js": "2.4.0",
+    "opn": "^5.2.0"
   }
 }
