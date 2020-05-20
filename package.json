@@ -13,6 +13,12 @@
     "twit": "^2.2.11",
     "node-chartjs": "^0.0.7",
     "chart.js": "2.4.0",
-    "opn": "^5.2.0"
+    "opn": "^5.2.0",
+    "cairo": "0.1.0-alpha.2",
+    "canvas": "^2.6.1",
+    "canvas-constructor": "^3.2.0",
+    "common-tags": "^1.8.0",
+    "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.1.0"
   }
 }
