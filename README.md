@@ -6,6 +6,6 @@ The bot's twitter account is [@CanadaCovid19B1](https://twitter.com/CanadaCovid1
 
 ## Your Country
 
-Want to make the same thing for your country? Fork the repository. Go to [bot.js](bot.js) and, on `line #19`, change **"Canada"** to the name of your country. Beforehand, you will need to setup access to the [Twitter API](https://developer.twitter.com/en) and a [Heroku](https://www.heroku.com) application. Additionally, if you want your bot to retweet your goverment's latest COVID-related tweet, change **"CanadianPM"** on `line #11` of [retweet.js](retweet.js to your government/government leader's Twitter username.
+Want to make the same thing for your country? Fork the repository. Go to [bot.js](bot.js) and, on `line #19`, change **"Canada"** to the name of your country. Beforehand, you will need to setup access to the [Twitter API](https://developer.twitter.com/en) and a [Heroku](https://www.heroku.com) application. Additionally, if you want your bot to retweet your goverment's latest COVID-related tweet, change **"CanadianPM"** on `line #11` of [retweet.js](retweet.js) to your government/government leader's Twitter username.
 
 Lots of love from Canada. :heart:
